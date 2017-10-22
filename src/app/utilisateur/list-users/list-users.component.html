@@ -1,0 +1,39 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Liste d'utilisateur</div>
+  <div class="panel-body">
+    <div class="row m-b-18px">
+    <div class="col-md-12">
+        <button [routerLink]="['/add']" class='btn btn-primary pull-right'>
+        <span class='glyphicon glyphicon-plus'></span> Nouveau utilisateur
+        </button>
+    </div>
+</div>
+<div><h1></h1></div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>Nom</td>
+      <td>Email</td>
+      <td>Genre</td>
+      <td>Date de naissance</td>
+      <td width=275 align="center">Action</td>
+    </tr>
+  </thead>
+  <tbody>
+     <tr *ngFor="let utilisateur of utilisateurs">
+        <td>{{utilisateur.nom}}</td>
+        <td>{{utilisateur.email}}</td>
+        <td>{{utilisateur.genre}}</td>
+        <td>{{utilisateur.date_anniversaire}}</td>
+        <td width=350> 
+            <a class="btn btn-info" routerLink="/show/{{utilisateur.utilisateur_id}}"> <span class='glyphicon glyphicon-eye-open'></span> Detail</a> 
+            <a class="btn btn-success" routerLink="/edit-user/{{utilisateur.utilisateur_id}}"><span class='glyphicon glyphicon-edit'></span> Modifier</a>
+            <a class="btn btn-danger" (click)="deleteUtilisateur(utilisateur.utilisateur_id)"><span class='glyphicon glyphicon-trash'></span> Supprimer</a>
+        </td>
+     </tr>
+    
+  </tbody>
+ 
+</table>
+ </div>
+ </div>

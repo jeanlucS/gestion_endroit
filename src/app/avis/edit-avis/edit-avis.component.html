@@ -1,0 +1,57 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Modification d'avis d'utilisateur.</div>
+  <div class="panel-body">
+    <form class="form-horizontal" (submit)="updateAvis()">
+  <div class="form-group">
+    <label for="utilisateur_id" class="col-sm-2 control-label">Identifiant d'utilisateur : </label>
+    <div class="col-sm-9">
+      <div class="input-group">
+    <select [(ngModel)]="model.utilisateur_id" name="utilisateur_id" class="form-control" describedby="basic-addon2">
+     <option *ngFor="let utilisateur of utilisateurs" value="{{utilisateur.utilisateur_id}}">
+     {{utilisateur.utilisateur_id}}
+      </option>
+    </select>
+    <span class="input-group-addon" id="basic-addon2"><i class='glyphicon glyphicon-user'></i></span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="endroit_id" class="col-sm-2 control-label">Identifiant d'endroit : </label>
+    <div class="col-sm-9">
+      <div class="input-group">
+     <select [(ngModel)]="model.endroit_id" name="endroit_id" class="form-control" describedby="basic-addon2">
+     <option *ngFor="let endroit of endroits" value="{{endroit.endroit_id}}">
+     {{endroit.endroit_id}}
+      </option>
+    </select>
+     <span class="input-group-addon" id="basic-addon2"><i class='glyphicon glyphicon-map-marker'></i></span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="note" class="col-sm-2 control-label">Note :</label>
+    <div class="col-sm-9">
+      <div class="input-group">
+      <input type="text" class="form-control"  [(ngModel)]="model.note" name="note" describedby="basic-addon2">
+      <span class="input-group-addon" id="basic-addon2"><i class='glyphicon glyphicon-star'></i></span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="commentaire" class="col-sm-2 control-label">Commentaire : </label>
+    <div class="col-sm-9">
+       <div class="input-group">
+       <textarea type="text" class="form-control"  [(ngModel)]="model.commentaire" name="commentaire" describedby="basic-addon2"></textarea>
+      <span class="input-group-addon" id="basic-addon2"><i class='glyphicon glyphicon-comment'></i></span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-8">
+      <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Modifier</button>
+      <a  class="btn btn-info" (click)="goBack()"><span class="glyphicon glyphicon-remove"></span> Annuller</a>
+    </div>
+  </div>
+</form>
+  </div>
+</div>

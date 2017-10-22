@@ -1,0 +1,40 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Modification d'Endroit du GE.</div>
+  <div class="panel-body">
+    <form class="form-horizontal" (submit)="updateEndroit()">
+  <div class="form-group">
+    <label for="end_ville" class="col-sm-2 control-label">Ville : </label>
+    <div class="col-sm-9">
+       <div class="input-group">
+      <input type="text" class="form-control"  [(ngModel)]="model.ville" name="ville" describedby="basic-addon2">
+      <span class="input-group-addon" id="basic-addon2"><i class='glyphicon glyphicon-map-marker'></i></span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="image" class="col-sm-2 control-label">Image : </label>
+    <div class="col-sm-9">
+       <div class="input-group">
+      <input type="text" class="form-control" [(ngModel)]="model.image" name="image" describedby="basic-addon2">
+      <span class="input-group-addon" id="basic-addon2"><i class='glyphicon glyphicon-picture'></i></span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="description" class="col-sm-2 control-label">Description : </label>
+    <div class="col-sm-9">
+       <div class="input-group">
+      <input type="text" class="form-control"  [(ngModel)]="model.description" name="description" describedby="basic-addon2">
+      <span class="input-group-addon" id="basic-addon2"><i class='glyphicon glyphicon-comment'></i></span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-8">
+      <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-floppy-save"></span> Modifier</button>
+      <a  class="btn btn-info" (click)="goBack()"><span class="glyphicon glyphicon-remove"></span> Annuller</a>
+    </div>
+  </div>
+</form>
+  </div>
+</div>

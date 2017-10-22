@@ -1,0 +1,35 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Liste endroit</div>
+  <div class="panel-body">
+    <div class="row m-b-18px">
+    <div class="col-md-12">
+        <button [routerLink]="['/add-endroit']" class='btn btn-primary pull-right'>
+        <span class='glyphicon glyphicon-plus'></span> Nouveau endroit
+        </button>
+    </div>
+</div>
+<div><h1></h1></div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>Ville</td>
+      <td>Image</td>
+      <td>Description</td>
+      <td width=275 align="center">Action</td>
+    </tr>
+  </thead>
+  <tbody>
+     <tr *ngFor="let endroit of endroits">
+        <td>{{endroit.ville}}</td>
+        <td>{{endroit.image}}</td>
+        <td>{{endroit.description}}</td>
+        <td width=350> 
+            <a class="btn btn-info" routerLink="/show-endroit/{{endroit.endroit_id}}"><span class='glyphicon glyphicon-eye-open'></span> Detail</a> 
+            <a class="btn btn-success" routerLink="/edit-endroit/{{endroit.endroit_id}}"><span class='glyphicon glyphicon-edit'></span> Modifier</a>
+            <a class="btn btn-danger" (click)="deleteEndroit(endroit.endroit_id)"><span class='glyphicon glyphicon-trash'></span> Supprimer</a>
+        </td>
+     </tr>
+  </tbody>
+</table>
+ </div>
+ </div>

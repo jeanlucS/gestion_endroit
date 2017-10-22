@@ -1,0 +1,36 @@
+<div class="panel panel-default" *ngIf=endroit>
+  <div class="panel-heading">Détail information d'un endroit.</div>
+  <div class="panel-body">
+      <form class="form-horizontal" >
+        <div class="form-group">
+          <label for="end_ville" class="col-sm-2 control-label">Adresse d'utilisateur : </label>
+          <div class="col-sm-9">
+            <p class="form-control">{{endroit.ville}}</p> 
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="image" class="col-sm-2 control-label">Photo de la ville : </label>
+          <div class="col-sm-9">
+          <p class="form-control">{{endroit.image}}</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="description" class="col-sm-2 control-label">Description : </label>
+          <div class="col-sm-9">
+          <p class="form-control">{{endroit.description}}</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="id" class="col-sm-2 control-label">ID Utilisateur : </label>
+          <div class="col-sm-9">
+            <p class="form-control">{{endroit.endroit_id}}</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-8">
+             <a  class="btn btn-info" (click)="goBack()">Annuler</a>
+          </div>
+        </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Nouveau utilisateur</div>
+  <div class="panel-body">
+    <form class="form-horizontal" (submit)="addUtilisateur()">
+  <div class="form-group">
+    <label for="user_name" class="col-sm-2 control-label">Nom d'utilisateur : </label>
+    <div class="col-sm-9">
+       <div class="input-group">
+      <input type="text" class="form-control"  [(ngModel)]="model.nom" name="nom"  describedby="basic-addon2">
+      <span class="input-group-addon" id="basic-addon2"><i class='glyphicon glyphicon-user'></i></span>
+     </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email" class="col-sm-2 control-label"> E-mail : </label>
+    <div class="col-sm-9">
+      <div class="input-group">
+      <input type="text" class="form-control" [(ngModel)]="model.email" name="email" describedby="basic-addon2">
+        <span class="input-group-addon" id="basic-addon2">@example.com</span>
+        </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="genre" class="col-sm-2 control-label">Genre : </label>
+    <div class="col-sm-9">
+      <div class="input-group">
+       <select  name="genre" class="form-control" [(ngModel)]="model.genre" describedby="basic-addon2">
+              <option value="Homme">Homme</option>
+              <option value="Femme">Femme</option>
+        </select>
+         <span class="input-group-addon" id="basic-addon2"><i class='glyphicon glyphicon-hand-left'></i></span>
+         </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="date_anniversaire" class="col-sm-2 control-label">Date de naissance : </label>
+    <div class="col-sm-9">
+       <div class="input-group">
+      <input type="date" class="form-control datepicker"  [(ngModel)]="model.date_anniversaire" name="date_anniversaire" describedby="basic-addon2">
+      <span class="input-group-addon" id="basic-addon2"><i class='glyphicon glyphicon-calendar'></i></span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-8">
+      <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-floppy-save"></span> Enregistrer</button>
+      <a  class="btn btn-info" (click)="goBack()"><span class="glyphicon glyphicon-remove"></span> Annuller</a>
+    </div>
+  </div>
+</form>
+
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Liste avis</div>
+  <div class="panel-body">
+    <div class="row m-b-18px">
+    <div class="col-md-12">
+        <button [routerLink]="['/add-avis']" class='btn btn-primary pull-right'>
+        <span class='glyphicon glyphicon-plus'></span> Nouveau avis
+        </button>
+    </div>
+</div>
+<div><h1></h1></div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>ID Utilisateur</td>
+      <td>ID Endroit</td>
+      <td>Note</td>
+      <td>Commentaire</td>
+      <td width=275 align="center">Action</td>
+    </tr>
+  </thead>
+  <tbody>
+     <tr *ngFor="let avis of aviss">
+        <td>{{avis.utilisateur_id}}</td>
+        <td>{{avis.endroit_id}}</td>
+        <td>{{avis.note}}</td>
+        <td>{{avis.commentaire}}</td>
+        <td width=350> 
+            <a class="btn btn-info" routerLink="/show-avis/{{avis.avis_id}}"><span class='glyphicon glyphicon-eye-open'></span> Detail</a> 
+            <a class="btn btn-success" routerLink="/edit-avis/{{avis.avis_id}}"><span class='glyphicon glyphicon-edit'></span> Modifier</a>
+            <a class="btn btn-danger" (click)="deleteAvis(avis.avis_id)"><span class='glyphicon glyphicon-trash'></span> Supprimer</a>
+        </td>
+     </tr>
+  </tbody>
+</table>
+ </div>
+ </div>
